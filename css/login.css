@@ -1,0 +1,379 @@
+/* login.css - Login Page Specific Styles (Mobile-First) */
+
+/* ==========================================
+   1. Base Mobile Styles (Default View)
+   ========================================== */
+
+.login-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+/* Hide desktop visual panel by default on mobile */
+.visual-panel {
+  display: none;
+}
+
+.form-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-md);
+  width: 100%;
+  position: relative;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius-lg);
+  border-color: rgba(255, 255, 255, 0.12);
+  /* Strip down card frame on smallest mobile viewports to prevent squishing */
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.form-header {
+  margin-bottom: var(--space-xl);
+}
+
+.form-title {
+  font-size: var(--fs-h2);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.form-subtitle {
+  font-size: 0.95rem;
+}
+
+/* --- Password Toggle View Icon --- */
+.password-toggle {
+  position: absolute;
+  right: var(--space-md);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xs);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.password-toggle:hover {
+  color: var(--text-primary);
+}
+
+.toggle-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* --- Form Options: Checkbox & Forgot link --- */
+.form-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  font-size: var(--fs-small);
+}
+
+/* Custom Checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  gap: var(--space-sm);
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  position: relative;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  border-color: var(--text-secondary);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--text-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.checkbox-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.checkbox-container:hover .checkbox-label {
+  color: var(--text-primary);
+}
+
+.forgot-password-link {
+  color: var(--accent-primary);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  align-self: flex-start;
+}
+
+.forgot-password-link:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
+/* --- Submit Button & Spinner --- */
+.btn-submit {
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--text-primary);
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Separator Line --- */
+.separator-container {
+  display: flex;
+  align-items: center;
+  margin: var(--space-xl) 0;
+  width: 100%;
+}
+
+.separator-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--border-subtle);
+}
+
+.separator-text {
+  padding: 0 var(--space-md);
+  font-size: var(--fs-small);
+  white-space: nowrap;
+}
+
+/* --- Social Login Grid --- */
+.social-login-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.social-btn {
+  font-size: 0.9rem;
+  padding: 0.65rem var(--space-md);
+}
+
+.social-icon {
+  flex-shrink: 0;
+}
+
+/* --- Form Footer Link --- */
+.form-footer {
+  font-size: var(--fs-small);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-lg);
+}
+
+.register-link {
+  color: var(--accent-primary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.register-link:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
+/* --- Mobile Only Back Link --- */
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  margin-bottom: var(--space-xl);
+  align-self: flex-start;
+  transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+}
+
+.mobile-only {
+  display: flex;
+}
+
+.form-logo {
+  margin: 0 auto var(--space-lg) auto;
+}
+
+
+/* ==========================================
+   2. Small Tablets & Above (min-width: 640px)
+   ========================================== */
+@media (min-width: 640px) {
+  /* Restore card frame structure, borders, and shadows on larger viewports */
+  .login-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .form-options {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .forgot-password-link {
+    align-self: center;
+  }
+
+  .social-login-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+}
+
+
+/* ==========================================
+   3. Desktop split-panel View (min-width: 1024px)
+   ========================================== */
+@media (min-width: 1024px) {
+  .login-container {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  /* Show visual panel */
+  .visual-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3xl);
+    position: relative;
+    background-color: #060912;
+    border-right: 1px solid var(--border-subtle);
+  }
+
+  .visual-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .visual-logo {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .quote-container {
+    margin-top: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .motivational-quote {
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .quote-author {
+    font-size: var(--fs-small);
+  }
+
+  .geometry-pattern {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    opacity: 0.85;
+  }
+
+  .math-geometry-svg {
+    overflow: visible;
+  }
+
+  /* Adjust form panel layout */
+  .form-panel {
+    padding: var(--space-xl);
+  }
+
+  .login-card {
+    border-radius: var(--radius-lg);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Hide mobile-specific utilities */
+  .mobile-only {
+    display: none;
+  }
+}
