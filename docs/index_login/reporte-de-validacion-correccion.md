@@ -1,8 +1,8 @@
 # 📋 Reporte de Validación Post-Corrección — MathIA
 
 **Fecha:** 2026-05-30  
-**Basado en:** [plan-de-correccion.md](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/docs/plan-de-correccion.md)  
-**Validación original:** [reporte-de-validacion.md](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/docs/reporte-de-validacion.md)  
+**Basado en:** [plan-de-correccion.md](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/docs/plan-de-correccion.md)  
+**Validación original:** [reporte-de-validacion.md](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/docs/reporte-de-validacion.md)  
 **Objetivo:** Verificar que las 12 correcciones propuestas en el plan de corrección fueron implementadas correctamente, llevando el cumplimiento del checklist del **93% al 100%**.
 
 > [!NOTE]
@@ -40,7 +40,7 @@
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo creado:** [favicon.svg](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/assets/icons/favicon.svg)
+- **Archivo creado:** [favicon.svg](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/assets/icons/favicon.svg)
 - **Verificación de especificaciones:**
 
 | Especificación | Requerido | Implementado | ¿Cumple? |
@@ -62,8 +62,8 @@
 
 | Archivo | Requerido | Implementado | Línea | ¿Cumple? |
 |:---|:---|:---|:---:|:---:|
-| [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html) | `<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">` | Exacto | L12 | ✅ |
-| [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) | `<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">` | Exacto | L12 | ✅ |
+| [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html) | `<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">` | Exacto | L12 | ✅ |
+| [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) | `<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">` | Exacto | L12 | ✅ |
 
 - **Ubicación correcta:** Después de la meta description y antes de la carga de CSS, según la especificación del plan.
 
@@ -75,7 +75,7 @@
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo modificado:** [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/tokens.css) (L16)
+- **Archivo modificado:** [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/tokens.css) (L16)
 - **Verificación:**
 
 | Propiedad | Antes | Plan Requiere | Implementado | ¿Cumple? |
@@ -135,8 +135,8 @@
 
 | Contenedor | Ubicación | `role="alert"` | `aria-live="assertive"` | ¿Cumple? |
 |:---|:---|:---:|:---:|:---:|
-| `#error-email` | [login.html L115](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html#L115) | ✅ Presente | ✅ Presente | ✅ |
-| `#error-password` | [login.html L143](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html#L143) | ✅ Presente | ✅ Presente | ✅ |
+| `#error-email` | [login.html L115](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html#L115) | ✅ Presente | ✅ Presente | ✅ |
+| `#error-password` | [login.html L143](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html#L143) | ✅ Presente | ✅ Presente | ✅ |
 
 - **Código exacto verificado (L115):** `<div class="form-error-msg" id="error-email" role="alert" aria-live="assertive" style="display: none;"></div>`
 - **Código exacto verificado (L143):** `<div class="form-error-msg" id="error-password" role="alert" aria-live="assertive" style="display: none;"></div>`
@@ -147,8 +147,8 @@
 
 **Estado: IMPLEMENTADA**
 
-- **HTML:** El botón toggle tiene `aria-label="Mostrar contraseña"` por defecto ([login.html L129](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html#L129)).
-- **JavaScript:** El `aria-label` se alterna dinámicamente en [login.js L29 y L33](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/js/login.js#L29):
+- **HTML:** El botón toggle tiene `aria-label="Mostrar contraseña"` por defecto ([login.html L129](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html#L129)).
+- **JavaScript:** El `aria-label` se alterna dinámicamente en [login.js L29 y L33](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/js/login.js#L29):
 
 ```javascript
 // Cuando contraseña es visible:
@@ -169,7 +169,7 @@ passwordToggle.setAttribute('aria-label', 'Mostrar contraseña');  // L33
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo modificado:** [components.css L155-158](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css#L155-L158)
+- **Archivo modificado:** [components.css L155-158](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css#L155-L158)
 - **Verificación:**
 
 | Propiedad | Antes (Plan dice) | Implementado | ¿Cumple? |
@@ -185,7 +185,7 @@ passwordToggle.setAttribute('aria-label', 'Mostrar contraseña');  // L33
 }
 ```
 
-- **Bonus:** El token `--border-focus` (`rgba(99, 102, 241, 0.5)`) definido en [tokens.css L22](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/tokens.css#L22) ahora se utiliza activamente, resolviendo la observación de "token definido pero nunca usado".
+- **Bonus:** El token `--border-focus` (`rgba(99, 102, 241, 0.5)`) definido en [tokens.css L22](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/tokens.css#L22) ahora se utiliza activamente, resolviendo la observación de "token definido pero nunca usado".
 
 ---
 
@@ -195,7 +195,7 @@ passwordToggle.setAttribute('aria-label', 'Mostrar contraseña');  // L33
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo modificado:** [components.css L183-212](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css#L183-L212)
+- **Archivo modificado:** [components.css L183-212](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css#L183-L212)
 - **Ubicación correcta:** Después de los estilos de `.has-error` (L166-181), tal como especifica el plan.
 
 | Estilo requerido | Implementado | Línea | ¿Cumple? |
@@ -217,8 +217,8 @@ passwordToggle.setAttribute('aria-label', 'Mostrar contraseña');  // L33
 
 | Campo | Ubicación | `<span class="success-indicator">` con SVG check | `aria-hidden="true"` | ¿Cumple? |
 |:---|:---|:---:|:---:|:---:|
-| Email | [login.html L109-113](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html#L109-L113) | ✅ Presente, con polyline `"20 6 9 17 4 12"` | ✅ | ✅ |
-| Password | [login.html L137-141](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html#L137-L141) | ✅ Presente, con polyline `"20 6 9 17 4 12"` | ✅ | ✅ |
+| Email | [login.html L109-113](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html#L109-L113) | ✅ Presente, con polyline `"20 6 9 17 4 12"` | ✅ | ✅ |
+| Password | [login.html L137-141](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html#L137-L141) | ✅ Presente, con polyline `"20 6 9 17 4 12"` | ✅ | ✅ |
 
 - **SVG specs verificadas:** `width="18" height="18"`, `viewBox="0 0 24 24"`, `stroke-width="2.5"`, `stroke-linecap="round"`, `stroke-linejoin="round"` — **exactamente** como el plan especifica.
 
@@ -228,7 +228,7 @@ passwordToggle.setAttribute('aria-label', 'Mostrar contraseña');  // L33
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo modificado:** [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/js/login.js)
+- **Archivo modificado:** [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/js/login.js)
 
 | Función requerida | Implementada | Líneas | Comportamiento verificado |
 |:---|:---:|:---:|:---|
@@ -258,7 +258,7 @@ Error → (input, corrige) → Éxito          ✅
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo modificado:** [components.css L210-212](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css#L210-L212)
+- **Archivo modificado:** [components.css L210-212](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css#L210-L212)
 - **Código implementado:**
 ```css
 #group-password .success-indicator {
@@ -282,7 +282,7 @@ Error → (input, corrige) → Éxito          ✅
 
 **Estado: PARCIALMENTE IMPLEMENTADA**
 
-- **Archivo:** [login.css L274-276](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/login.css#L274-L276)
+- **Archivo:** [login.css L274-276](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/login.css#L274-L276)
 - **Verificación:**
 
 | Propiedad | Antes | Requerido | Implementado | ¿Cumple? |
@@ -307,7 +307,7 @@ Error → (input, corrige) → Éxito          ✅
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo modificado:** [components.css L73-94](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css#L73-L94)
+- **Archivo modificado:** [components.css L73-94](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css#L73-L94)
 - **Verificación:**
 
 | Propiedad | Antes (reportado) | Implementado | ¿Cumple? |
@@ -327,7 +327,7 @@ Error → (input, corrige) → Éxito          ✅
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo modificado:** [landing.css L336-339](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/landing.css#L336-L339)
+- **Archivo modificado:** [landing.css L336-339](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/landing.css#L336-L339)
 - **Verificación:**
 
 | Propiedad | Antes | Implementado | ¿Cumple? |
@@ -355,8 +355,8 @@ Error → (input, corrige) → Éxito          ✅
 
 | Archivo | Etiquetas requeridas | Implementado | Líneas | ¿Cumple? |
 |:---|:---|:---:|:---:|:---:|
-| [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html) | `preconnect` a `fonts.googleapis.com` + `fonts.gstatic.com` | ✅ | L13-L14 | ✅ |
-| [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) | `preconnect` a `fonts.googleapis.com` + `fonts.gstatic.com` | ✅ | L13-L14 | ✅ |
+| [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html) | `preconnect` a `fonts.googleapis.com` + `fonts.gstatic.com` | ✅ | L13-L14 | ✅ |
+| [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) | `preconnect` a `fonts.googleapis.com` + `fonts.gstatic.com` | ✅ | L13-L14 | ✅ |
 
 **Código verificado en ambos archivos:**
 ```html
@@ -373,8 +373,8 @@ Error → (input, corrige) → Éxito          ✅
 
 **Estado: IMPLEMENTADA**
 
-- **Archivo HTML:** [index.html L365-381](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html#L365-L381)
-- **Archivo CSS:** [landing.css L687-704](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/landing.css#L687-L704)
+- **Archivo HTML:** [index.html L365-381](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html#L365-L381)
+- **Archivo CSS:** [landing.css L687-704](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/landing.css#L687-L704)
 
 | Especificación | Requerido | Implementado | ¿Cumple? |
 |:---|:---|:---|:---:|
@@ -404,8 +404,8 @@ Error → (input, corrige) → Éxito          ✅
 
 | Archivo | Meta tags requeridos | Implementado | Líneas | ¿Cumple? |
 |:---|:---|:---:|:---:|:---:|
-| [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html) | `og:title`, `og:description`, `og:type`, `theme-color` | ✅ | L8-L11 | ✅ |
-| [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) | `og:title`, `og:description`, `og:type`, `theme-color` | ✅ | L8-L11 | ✅ |
+| [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html) | `og:title`, `og:description`, `og:type`, `theme-color` | ✅ | L8-L11 | ✅ |
+| [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) | `og:title`, `og:description`, `og:type`, `theme-color` | ✅ | L8-L11 | ✅ |
 
 **Verificación detallada — index.html (L8-L11):**
 ```html
@@ -520,10 +520,10 @@ Estas observaciones no afectan el cumplimiento del checklist pero se documentan 
 
 | # | Observación | Severidad | Archivo |
 |:---:|:---|:---:|:---|
-| 1 | El comentario CSS en login.css L274 aún dice `(min-width: 481px)` aunque el valor del media query ya fue corregido a `640px` | 💡 Cosmético | [login.css L274](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/login.css#L274) |
-| 2 | El favicon usa un diseño tipográfico en vez del "triángulo con cruz" mencionado en el plan, pero cumple todas las specs técnicas | 💡 Diseño | [favicon.svg](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/assets/icons/favicon.svg) |
-| 3 | `main.js` sigue sin incluirse en `login.html` (como en la validación original). Esto es aceptable ya que login.html no usa navbar ni IntersectionObserver | 💡 Arquitectura | [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) |
-| 4 | `.navbar--scrolled` sigue definiendo `height: 64px` explícitamente (sin transición). El plan sugería usar `padding-block` como alternativa, pero la solución actual es válida | 💡 Alternativa | [components.css L88-89](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css#L88-L89) |
+| 1 | El comentario CSS en login.css L274 aún dice `(min-width: 481px)` aunque el valor del media query ya fue corregido a `640px` | 💡 Cosmético | [login.css L274](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/login.css#L274) |
+| 2 | El favicon usa un diseño tipográfico en vez del "triángulo con cruz" mencionado en el plan, pero cumple todas las specs técnicas | 💡 Diseño | [favicon.svg](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/assets/icons/favicon.svg) |
+| 3 | `main.js` sigue sin incluirse en `login.html` (como en la validación original). Esto es aceptable ya que login.html no usa navbar ni IntersectionObserver | 💡 Arquitectura | [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) |
+| 4 | `.navbar--scrolled` sigue definiendo `height: 64px` explícitamente (sin transición). El plan sugería usar `padding-block` como alternativa, pero la solución actual es válida | 💡 Alternativa | [components.css L88-89](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css#L88-L89) |
 
 ---
 

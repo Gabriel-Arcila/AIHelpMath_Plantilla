@@ -5,12 +5,13 @@
    ========================================== */
 
 .login-container {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   width: 100vw;
   background-color: var(--bg-primary);
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Hide desktop visual panel by default on mobile */
@@ -23,14 +24,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2xl) var(--space-md);
+  padding: var(--space-lg) var(--space-md);
   width: 100%;
   position: relative;
 }
 
 .login-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   border-radius: var(--radius-lg);
   border-color: rgba(255, 255, 255, 0.12);
   /* Strip down card frame on smallest mobile viewports to prevent squishing */
@@ -43,18 +44,18 @@
 }
 
 .form-header {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
 }
 
 .form-title {
-  font-size: var(--fs-h2);
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: var(--space-xs);
 }
 
 .form-subtitle {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 /* --- Password Toggle View Icon --- */
@@ -87,8 +88,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xl);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
   font-size: var(--fs-small);
 }
 
@@ -171,7 +172,7 @@
 /* --- Submit Button & Spinner --- */
 .btn-submit {
   width: 100%;
-  height: 50px;
+  height: 42px;
   font-size: 1rem;
 }
 
@@ -193,7 +194,7 @@
 .separator-container {
   display: flex;
   align-items: center;
-  margin: var(--space-xl) 0;
+  margin: var(--space-md) 0;
   width: 100%;
 }
 
@@ -213,13 +214,13 @@
 .social-login-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-xl);
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .social-btn {
-  font-size: 0.9rem;
-  padding: 0.65rem var(--space-md);
+  font-size: 0.85rem;
+  padding: 0.5rem var(--space-md);
 }
 
 .social-icon {
@@ -230,7 +231,7 @@
 .form-footer {
   font-size: var(--fs-small);
   border-top: 1px solid var(--border-subtle);
-  padding-top: var(--space-lg);
+  padding-top: var(--space-md);
 }
 
 .register-link {
@@ -278,7 +279,7 @@
   .login-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border-subtle);
-    padding: var(--space-xl);
+    padding: var(--space-md) var(--space-lg);
     box-shadow: var(--shadow-card);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -306,18 +307,13 @@
    ========================================== */
 @media (min-width: 1024px) {
   .login-container {
-    grid-template-columns: 1.05fr 0.95fr;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Show visual panel */
+  /* Remove visual panel CSS since it was deleted */
   .visual-panel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-3xl);
-    position: relative;
-    background-color: #060912;
-    border-right: 1px solid var(--border-subtle);
+    display: none;
   }
 
   .visual-content {
@@ -364,7 +360,7 @@
 
   /* Adjust form panel layout */
   .form-panel {
-    padding: var(--space-xl);
+    padding: var(--space-md);
   }
 
   .login-card {
@@ -372,6 +368,17 @@
     border-color: rgba(255, 255, 255, 0.12);
   }
 
+  /* Reduce form element sizes */
+  .login-card .form-group {
+    margin-bottom: var(--space-md);
+  }
+  .login-card .form-input {
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+  }
+  .login-card .form-label {
+    font-size: 0.8rem;
+  }
+  
   /* Hide mobile-specific utilities */
   .mobile-only {
     display: none;

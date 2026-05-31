@@ -1,8 +1,8 @@
 # 🔧 Plan de Corrección — Hallazgos del Reporte de Validación MathIA
 
 **Fecha:** 2026-05-30  
-**Basado en:** [reporte-de-validacion.md](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/docs/reporte-de-validacion.md)  
-**Plan original:** [plan-de-implementacion.md](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/docs/plan-de-implementacion.md)  
+**Basado en:** [reporte-de-validacion.md](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/docs/reporte-de-validacion.md)  
+**Plan original:** [plan-de-implementacion.md](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/docs/plan-de-implementacion.md)  
 **Objetivo:** Llevar el cumplimiento del checklist del **93% actual al 100%** corrigiendo la **1 falla** y las **5 advertencias parciales** detectadas, más los hallazgos adicionales fuera del checklist.
 
 > [!NOTE]
@@ -15,17 +15,17 @@
 | # | Hallazgo | Severidad | Categoría | Archivos Afectados |
 |:---:|:---|:---:|:---|:---|
 | 1 | Favicon no configurado | ❌ FALLA | SEO | `index.html`, `login.html`, nuevo `assets/icons/` |
-| 2 | Contraste de `--text-muted` insuficiente (4.2:1 < 4.5:1) | ⚠️ PARCIAL | Accesibilidad | [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/tokens.css) |
-| 3 | SVGs decorativos sin `aria-hidden="true"` | ⚠️ PARCIAL | Accesibilidad | [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html), [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) |
-| 4 | Estado visual de éxito faltante en inputs del formulario | ⚠️ PARCIAL | UX | [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css), [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/js/login.js) |
-| 5 | Breakpoint inconsistente en login.css (481px vs 640px del plan) | ⚠️ PARCIAL | Responsividad | [login.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/login.css) |
-| 6 | Animaciones no-óptimas (`height` en navbar, `r` en SVG pulse) | ⚠️ PARCIAL | Rendimiento | [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css), [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/landing.css) |
-| 7 | Iconos de redes sociales faltantes en footer | ❌ EXTRA | Contenido | [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html), [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/landing.css) |
-| 8 | Carga de fuentes no optimizada (falta `preconnect`) | 💡 MEJORA | Rendimiento | [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html), [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) |
-| 9 | Contenedores de error sin `role="alert"` | 💡 MEJORA | Accesibilidad | [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) (L103, L126) |
-| 10 | Inputs de formulario sin `:focus-visible` (solo `:focus`) | 💡 MEJORA | Accesibilidad | [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css) |
-| 11 | Token `--border-focus` definido pero nunca usado | 💡 MEJORA | Mantenimiento | [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/tokens.css) (L22), [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css) |
-| 12 | Meta tags Open Graph faltantes | 💡 MEJORA | SEO | [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html), [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) |
+| 2 | Contraste de `--text-muted` insuficiente (4.2:1 < 4.5:1) | ⚠️ PARCIAL | Accesibilidad | [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/tokens.css) |
+| 3 | SVGs decorativos sin `aria-hidden="true"` | ⚠️ PARCIAL | Accesibilidad | [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html), [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) |
+| 4 | Estado visual de éxito faltante en inputs del formulario | ⚠️ PARCIAL | UX | [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css), [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/js/login.js) |
+| 5 | Breakpoint inconsistente en login.css (481px vs 640px del plan) | ⚠️ PARCIAL | Responsividad | [login.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/login.css) |
+| 6 | Animaciones no-óptimas (`height` en navbar, `r` en SVG pulse) | ⚠️ PARCIAL | Rendimiento | [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css), [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/landing.css) |
+| 7 | Iconos de redes sociales faltantes en footer | ❌ EXTRA | Contenido | [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html), [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/landing.css) |
+| 8 | Carga de fuentes no optimizada (falta `preconnect`) | 💡 MEJORA | Rendimiento | [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html), [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) |
+| 9 | Contenedores de error sin `role="alert"` | 💡 MEJORA | Accesibilidad | [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) (L103, L126) |
+| 10 | Inputs de formulario sin `:focus-visible` (solo `:focus`) | 💡 MEJORA | Accesibilidad | [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css) |
+| 11 | Token `--border-focus` definido pero nunca usado | 💡 MEJORA | Mantenimiento | [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/tokens.css) (L22), [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css) |
+| 12 | Meta tags Open Graph faltantes | 💡 MEJORA | SEO | [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html), [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) |
 
 ---
 
@@ -57,7 +57,7 @@ El plan original (Sección 2.6 — Footer y checklist Paso 7) exige un favicon c
 
 - **Acción:** Crear la estructura de carpetas `assets/icons/` en la raíz del proyecto.
 - **Resultado esperado:** El directorio existe y está listo para alojar el archivo favicon.
-- **Ubicación:** Raíz del proyecto (`IAHelpMath Plantilla/assets/icons/`)
+- **Ubicación:** Raíz del proyecto (`MathIA Plantilla/assets/icons/`)
 
 #### Tarea 1.2 — Diseñar y crear el favicon SVG
 
@@ -78,8 +78,8 @@ El plan original (Sección 2.6 — Footer y checklist Paso 7) exige un favicon c
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
   ```
 - **Archivos a modificar:**
-  - [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html) — En la sección `<head>`
-  - [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) — En la sección `<head>`
+  - [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html) — En la sección `<head>`
+  - [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) — En la sección `<head>`
 
 ### Verificación Etapa 1
 
@@ -100,7 +100,7 @@ El plan original (Sección 2.6 — Footer y checklist Paso 7) exige un favicon c
 
 **Problema:** El color `--text-muted` actual (`#64748b`) tiene un ratio de contraste de ~4.2:1 contra el fondo `--bg-primary` (`#0a0e1a`), incumpliendo el mínimo WCAG AA de 4.5:1 para texto pequeño.
 
-- **Archivo a modificar:** [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/tokens.css)
+- **Archivo a modificar:** [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/tokens.css)
 - **Cambio exacto:** Reemplazar el valor de `--text-muted`:
   ```diff
   - --text-muted: #64748b;
@@ -118,7 +118,7 @@ El plan original (Sección 2.6 — Footer y checklist Paso 7) exige un favicon c
 
 **Criterio de decisión:** Un SVG es **decorativo** si no aporta información semántica que se pierda al ocultarlo de un lector de pantalla.
 
-- **Archivos a modificar:** [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html) y [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html)
+- **Archivos a modificar:** [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html) y [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html)
 - **Acción:** Localizar **cada** elemento `<svg>` inline en ambos archivos y evaluar:
 
 #### En `index.html` — SVGs a marcar como decorativos:
@@ -154,7 +154,7 @@ El plan original (Sección 2.6 — Footer y checklist Paso 7) exige un favicon c
 
 **Problema:** Los contenedores de error del formulario (`#error-email` y `#error-password`) no tienen `role="alert"`, lo que significa que los lectores de pantalla no anuncian automáticamente los errores cuando aparecen.
 
-- **Archivo a modificar:** [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html)
+- **Archivo a modificar:** [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html)
 - **Ubicación exacta:** Línea 103 y línea 126 del HTML.
 - **Acción:** Los contenedores de error **ya existen** en el HTML como `<div>` vacíos con `display: none`. Agregar `role="alert"` y `aria-live="assertive"` directamente a estos elementos:
 
@@ -174,7 +174,7 @@ El plan original (Sección 2.6 — Footer y checklist Paso 7) exige un favicon c
 
 **Problema potencial:** El botón que alterna la visibilidad de la contraseña (ícono de ojo) debe tener un `aria-label` descriptivo que cambie según el estado.
 
-- **Archivo a modificar:** [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/js/login.js) y/o [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html)
+- **Archivo a modificar:** [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/js/login.js) y/o [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html)
 - **Acción:**
   1. Verificar si el botón `<button>` del toggle ya tiene `aria-label`.
   2. Si no lo tiene, agregar `aria-label="Mostrar contraseña"`.
@@ -186,7 +186,7 @@ El plan original (Sección 2.6 — Footer y checklist Paso 7) exige un favicon c
 
 **Problema descubierto:** Los inputs de formulario (`.form-input`) solo tienen estilos de `:focus` pero **no** de `:focus-visible`. Los botones (`.btn`) sí tienen `:focus-visible`. Esta inconsistencia hace que los inputs muestren el focus ring al hacer clic con el mouse (`:focus`) cuando idealmente solo deberían mostrarlo al navegar con teclado (`:focus-visible`).
 
-- **Archivo a modificar:** [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css)
+- **Archivo a modificar:** [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css)
 - **Acción:** Cambiar el selector `:focus` de `.form-input` a `:focus-visible`, o agregar estilos `:focus-visible` específicos:
   ```diff
   - .form-input:focus {
@@ -195,7 +195,7 @@ El plan original (Sección 2.6 — Footer y checklist Paso 7) exige un favicon c
       box-shadow: 0 0 0 3px var(--border-focus);
     }
   ```
-- **Bonus:** Esto también aprovecha el token `--border-focus` (`rgba(99, 102, 241, 0.5)`) que está definido en [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/tokens.css) (L22) pero **actualmente no se usa en ningún lugar**. Integrarlo aquí le da propósito a ese token.
+- **Bonus:** Esto también aprovecha el token `--border-focus` (`rgba(99, 102, 241, 0.5)`) que está definido en [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/tokens.css) (L22) pero **actualmente no se usa en ningún lugar**. Integrarlo aquí le da propósito a ese token.
 
 ### Verificación Etapa 2
 
@@ -225,7 +225,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 ### Tarea 3.1 — Crear estilos CSS para `.has-success`
 
-- **Archivo a modificar:** [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css)
+- **Archivo a modificar:** [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css)
 - **Ubicación:** Agregar los nuevos estilos **después** de los estilos existentes de `.has-error` para mantener la coherencia del archivo.
 - **Estilos a crear:**
 
@@ -265,7 +265,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 ### Tarea 3.2 — Agregar el ícono SVG check en el HTML del formulario
 
-- **Archivo a modificar:** [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html)
+- **Archivo a modificar:** [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html)
 - **Acción:** Dentro de cada `.form-group` que contenga un `.form-input` validable (email y password), agregar un elemento para el indicador de éxito.
 - **Ubicación:** Justo después del `<input>` y antes del contenedor de mensajes de error.
 - **Código de referencia:**
@@ -280,7 +280,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 ### Tarea 3.3 — Implementar la lógica de éxito en JavaScript
 
-- **Archivo a modificar:** [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/js/login.js)
+- **Archivo a modificar:** [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/js/login.js)
 - **Acciones específicas:**
 
 1. **Crear función `setInputSuccess(inputElement)`:**
@@ -316,7 +316,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 - **Solución de diseño:**
   - **Para el campo email:** El check se posiciona a la derecha del input (posición estándar).
   - **Para el campo password:** El check se posiciona a la **izquierda** del botón toggle de visibilidad, con un `right` ajustado (ej: `right: 48px`) para no colisionar con el botón del ojo.
-- **Archivo a modificar:** [login.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/login.css) o [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css)
+- **Archivo a modificar:** [login.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/login.css) o [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css)
 - **CSS adicional necesario:**
   ```css
   .password-wrapper .success-indicator {
@@ -343,7 +343,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 **Problema:** El archivo `login.css` usa `@media (min-width: 481px)` pero el plan especifica `640px` como el primer breakpoint después del móvil base.
 
-- **Archivo a modificar:** [login.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/login.css)
+- **Archivo a modificar:** [login.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/login.css)
 - **Acción:** Localizar el media query `@media (min-width: 481px)` y evaluar:
   1. **¿Qué estilos contiene?** Revisar si los estilos dentro de ese breakpoint son apropiados para `640px`.
   2. **Cambiar** `481px` → `640px` si los estilos son de transición tablet.
@@ -358,7 +358,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 **Problema:** La navbar anima la propiedad `height` (de 80px a 64px) al hacer scroll, lo que provoca reflow del layout y es costoso para el rendimiento. El plan original (Paso 6) advierte: *"Nunca animar width, height, top, left, margin o padding."*
 
-- **Archivo a modificar:** [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css)
+- **Archivo a modificar:** [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css)
 - **Estrategia de rediseño:**
   - En lugar de animar `height`, usar un `padding` fijo y animar visualmente con `transform: scale()` o ajustar el `padding` de forma que no cause un reflow significativo.
   - **Opción recomendada:** Mantener un `height` fijo para la navbar y usar `padding` con `transition` solo sobre propiedades composited. Alternativamente, si el efecto visual de "navbar compacta" es importante:
@@ -387,7 +387,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 **Problema:** El keyframe `pulse` en `landing.css` anima la propiedad SVG `r` (radio de círculo), que no es `transform` ni `opacity`. Aunque el impacto es mínimo (solo 2 círculos SVG), viola la regla de rendimiento del plan.
 
-- **Archivo a modificar:** [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/landing.css)
+- **Archivo a modificar:** [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/landing.css)
 - **Código actual** (landing.css L335-339):
   ```css
   @keyframes pulse {
@@ -413,7 +413,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 **Problema:** Las fuentes de Google Fonts se cargan via `@import` en CSS, lo que bloquea el renderizado. Agregar `preconnect` en el HTML permite que el navegador establezca la conexión antes de descubrir el `@import`.
 
-- **Archivos a modificar:** [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html) y [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html)
+- **Archivos a modificar:** [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html) y [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html)
 - **Acción:** Agregar las siguientes etiquetas en el `<head>` de ambas páginas, **antes** de cualquier `<link>` de CSS:
   ```html
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -425,7 +425,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 **Problema:** El plan original (Sección 2.6 — Footer) especifica: *"Redes sociales: Iconos SVG de redes (decorativos)."* Estos no están presentes en la implementación actual. El footer actual (líneas 324-360 de index.html) contiene logo, descripción, dos grupos de enlaces (Enlaces y Legal), y copyright, pero **ningún ícono social**.
 
-- **Archivo a modificar:** [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html)
+- **Archivo a modificar:** [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html)
 - **Ubicación:** Dentro de la sección `<footer>`, después del copyright o como parte de la barra inferior del footer.
 - **Acción:** Agregar un grupo de 3 iconos SVG de redes sociales en la sección footer.
 - **Redes a incluir:** Twitter/X, GitHub, LinkedIn (decorativos, sin funcionalidad real).
@@ -436,7 +436,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
   - Wrapping: dentro de un contenedor flex con `gap: var(--space-md)`.
   - Cada ícono dentro de un `<a>` con `href="#"`, `aria-label` descriptivo (ej: `aria-label="Síguenos en Twitter"`), y `target="_blank"` + `rel="noopener noreferrer"`.
   - Los SVGs deben tener `aria-hidden="true"` (el `aria-label` del enlace ya proporciona la información).
-- **Archivo CSS a modificar:** [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/landing.css) — Agregar estilos para `.footer-social`.
+- **Archivo CSS a modificar:** [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/landing.css) — Agregar estilos para `.footer-social`.
 - **CSS de referencia:**
   ```css
   .footer-social {
@@ -461,7 +461,7 @@ Actualmente solo están implementados los estados 2 y 3. Falta el estado 1.
 
 **Problema descubierto:** Ninguna de las dos páginas tiene meta tags Open Graph, lo que significa que al compartir los enlaces en redes sociales o aplicaciones de mensajería, no se mostrará una previsualización rica (imagen, título, descripción).
 
-- **Archivos a modificar:** [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html) y [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html)
+- **Archivos a modificar:** [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html) y [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html)
 - **Acción:** Agregar en el `<head>` de ambas páginas, después de la meta description:
 
   **Para index.html:**
@@ -526,12 +526,12 @@ Una vez completadas las 4 etapas, realizar las siguientes verificaciones globale
 | Archivo | Etapa(s) | Tipo de Cambio |
 |:---|:---:|:---|
 | `assets/icons/favicon.svg` | 1 | **[NUEVO]** Crear favicon SVG |
-| [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/index.html) | 1, 2, 4 | Agregar: favicon, preconnect, aria-hidden, social icons, OG meta tags |
-| [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/login.html) | 1, 2, 3, 4 | Agregar: favicon, preconnect, aria-hidden, success indicators, role="alert", OG meta tags |
-| [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/tokens.css) | 2 | Ajustar valor de `--text-muted` |
-| [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/components.css) | 2, 3, 4 | Agregar estilos `.has-success`, mejorar `:focus-visible` en inputs, usar `--border-focus`, corregir navbar transition |
-| [login.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/login.css) | 3, 4 | Ajustar posición check en password, cambiar breakpoint 481→640 |
-| [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/css/landing.css) | 4 | Corregir keyframe `pulse`, agregar estilos social icons |
-| [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/IAHelpMath Plantilla/js/login.js) | 2, 3 | Agregar funciones de éxito, aria-label toggle en password |
+| [index.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/index.html) | 1, 2, 4 | Agregar: favicon, preconnect, aria-hidden, social icons, OG meta tags |
+| [login.html](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/login.html) | 1, 2, 3, 4 | Agregar: favicon, preconnect, aria-hidden, success indicators, role="alert", OG meta tags |
+| [tokens.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/tokens.css) | 2 | Ajustar valor de `--text-muted` |
+| [components.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/components.css) | 2, 3, 4 | Agregar estilos `.has-success`, mejorar `:focus-visible` en inputs, usar `--border-focus`, corregir navbar transition |
+| [login.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/login.css) | 3, 4 | Ajustar posición check en password, cambiar breakpoint 481→640 |
+| [landing.css](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/css/landing.css) | 4 | Corregir keyframe `pulse`, agregar estilos social icons |
+| [login.js](file:///c:/Users/gabri/OneDrive/Documentos/Proyecto/MathIA Plantilla/js/login.js) | 2, 3 | Agregar funciones de éxito, aria-label toggle en password |
 
 > **Tiempo estimado de implementación:** ~2-3 horas para un desarrollador familiarizado con el proyecto.
