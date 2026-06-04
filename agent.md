@@ -52,3 +52,21 @@ El diseño debe transmitir siempre **inteligencia, confianza y modernidad**, apo
 * **Radios de Borde:** Contornos suaves (`8px` a `20px`) para aportar amabilidad al aspecto "tech" de la IA.
 * **Luces y Sombras:** Uso extensivo de sombras flotantes para las tarjetas (`0 8px 32px rgba(0,0,0,0.25)`) y destellos de color (`0 0 40px rgba(99,102,241,0.15)`) para destacar interacciones, como si la interfaz emitiera luz propia.
 * **Micro-animaciones de Alto Rendimiento:** Transiciones suaves usando una curva especial de Bézier (`0.3s cubic-bezier(0.4, 0, 0.2, 1)`). Para asegurar 60 cuadros por segundo, toda animación de entrada o interacción modifica única y exclusivamente `transform` (translaciones, escalas) y `opacity`, prohibiendo la animación de propiedades de layout (width, margin, etc.) para evitar reflows.
+
+---
+
+## 📋 Directrices para Planes de Implementación
+
+Cada vez que se solicite crear un plan de implementación para una nueva funcionalidad, componente o página, el plan debe generarse siguiendo estrictamente estas características y estructura:
+
+1. **Ubicación del Archivo:** Los planes deben guardarse siempre como archivos Markdown (`.md`) dentro de una carpeta específica bajo el directorio `docs/` (por ejemplo, `docs/registro/plan-de-implementacion.md`).
+2. **Fases Estructuradas:** El plan debe dividirse en Fases lógicas y progresivas (Ej: Estructura HTML, Estilos CSS, Lógica JS, Integración, QA). Cada fase debe tener un objetivo claro.
+3. **Checklist de Tareas:** Cada fase debe contar con un checklist accionable (`- [ ]`) de tareas muy específicas y granulares que permitan hacer seguimiento visual del progreso.
+4. **Fase Obligatoria de Validación (QA y Accesibilidad):** Todo plan debe incluir como última fase la validación integral. Esta debe contemplar:
+   - Navegación exclusiva por teclado y focus rings.
+   - Contraste de colores y atributos ARIA para lectores de pantalla.
+   - Pruebas responsivas en múltiples viewports (desde 320px hasta desktop).
+   - Pruebas de interacciones, validaciones de errores y rendimiento (60fps).
+5. **Criterios de Aceptación:** Una lista al final de las fases definiendo qué condiciones exactas deben cumplirse para dar por exitosa la implementación.
+6. **Referencias Técnicas:** Una tabla enlazando los archivos base necesarios (Tokens, Global CSS, páginas de referencia, `agent.md`, etc.).
+7. **Resumen de Archivos:** Una tabla detallando qué archivos nuevos se crearán (`🆕 Crear`), cuáles se modificarán (`✏️ Modificar`) y cuáles solo se revisarán (`🔍 Revisar`).
