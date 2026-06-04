@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar Sesión — MathIA</title>
-  <meta name="description" content="Inicia sesión en tu cuenta de MathIA para continuar practicando y aprendiendo matemáticas con Inteligencia Artificial.">
-  <meta property="og:title" content="Iniciar Sesión — MathIA">
-  <meta property="og:description" content="Accede a tu cuenta de MathIA para continuar aprendiendo matemáticas con IA.">
+  <title>Crear Cuenta — MathIA</title>
+  <meta name="description" content="Regístrate en MathIA para comenzar a aprender, practicar y dominar las matemáticas de forma personalizada con Inteligencia Artificial.">
+  <meta property="og:title" content="Crear Cuenta — MathIA">
+  <meta property="og:description" content="Únete a MathIA y transforma tu forma de aprender matemáticas con explicaciones interactivas paso a paso.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0a0e1a">
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
@@ -14,14 +14,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/registro.css">
 </head>
 <body>
   <!-- Ambient Glow Backdrops -->
   <div class="glow-backdrop" style="top: 20%; left: -10%;"></div>
   <div class="glow-backdrop" style="bottom: -10%; right: 10%; background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(99, 102, 241, 0) 70%);"></div>
 
-  <main class="login-container" style="display: flex; flex-direction: column; min-height: 100vh; overflow-y: auto;">
+  <main class="registro-container" style="display: flex; flex-direction: column; min-height: 100vh; overflow-y: auto;">
     <!-- Form Panel -->
     <section class="form-panel" style="flex: 1; justify-content: center;">
       <!-- Back Link for mobile view -->
@@ -33,7 +33,7 @@
         <span>Volver a la página principal</span>
       </a>
 
-      <div class="card login-card">
+      <div class="card registro-card">
         <div class="form-header text-center">
           <h1 class="form-title" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
             <svg aria-hidden="true" class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 36px; height: 36px; flex-shrink: 0;">
@@ -45,12 +45,31 @@
               </defs>
               <path d="M5 6H27 M10.5 6V23Q10.5 27 6.5 27 M21.5 6V27" stroke="url(#logo-grad-form)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            Iniciar Sesión
+            Crear Cuenta
           </h1>
-          <p class="form-subtitle text-muted" style="margin-top: 10px;">Ingresa a tu cuenta para continuar aprendiendo</p>
+          <p class="form-subtitle text-muted" style="margin-top: 10px;">Únete a MathIA y transforma tu aprendizaje</p>
         </div>
 
-        <form id="login-form" novalidate>
+        <form id="registro-form" novalidate>
+          <!-- Name Input -->
+          <div class="form-group" id="group-nombre">
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <div class="form-input-container">
+              <input type="text" id="nombre" class="form-input" placeholder="Tu nombre completo" required autocomplete="name">
+              <span class="form-input-icon">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </span>
+              <span class="success-indicator" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="form-error-msg" id="error-nombre" role="alert" aria-live="assertive" style="display: none;"></div>
+          </div>
+
           <!-- Email Input -->
           <div class="form-group" id="group-email">
             <label for="email" class="form-label">Correo Electrónico</label>
@@ -74,7 +93,7 @@
           <div class="form-group" id="group-password">
             <label for="password" class="form-label">Contraseña</label>
             <div class="form-input-container">
-              <input type="password" id="password" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+              <input type="password" id="password" class="form-input" placeholder="••••••••" required autocomplete="new-password">
               <span class="form-input-icon">
                 <svg aria-hidden="true" viewBox="0 0 24 24">
                   <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
@@ -95,22 +114,57 @@
                 </svg>
               </span>
             </div>
+            <!-- Password Strength Meter -->
+            <div class="password-strength" id="password-strength" style="display: none; margin-top: 8px;">
+              <div class="strength-bar" style="height: 4px; background-color: var(--bg-tertiary); border-radius: var(--radius-full); overflow: hidden; position: relative;">
+                <div class="strength-fill" style="height: 100%; width: 0%; transition: width var(--transition-smooth), background-color var(--transition-smooth);"></div>
+              </div>
+              <span class="strength-label text-muted" style="font-size: var(--fs-small); display: block; margin-top: 4px;"></span>
+            </div>
             <div class="form-error-msg" id="error-password" role="alert" aria-live="assertive" style="display: none;"></div>
           </div>
 
-          <!-- Options Checkbox / Forgot Link -->
-          <div class="form-options">
+          <!-- Confirm Password Input -->
+          <div class="form-group" id="group-confirm-password">
+            <label for="confirm-password" class="form-label">Confirmar Contraseña</label>
+            <div class="form-input-container">
+              <input type="password" id="confirm-password" class="form-input" placeholder="••••••••" required autocomplete="new-password">
+              <span class="form-input-icon">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                </svg>
+              </span>
+              <!-- Toggle Visibility Button -->
+              <button type="button" class="password-toggle" id="confirm-password-toggle" aria-label="Mostrar contraseña">
+                <svg viewBox="0 0 24 24" id="confirm-eye-icon-show" class="toggle-icon">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+                <svg viewBox="0 0 24 24" id="confirm-eye-icon-hide" class="toggle-icon" style="display: none;">
+                  <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.82l2.92 2.92c1.51-1.26 2.7-2.89 3.44-4.74-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+                </svg>
+              </button>
+              <span class="success-indicator" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="form-error-msg" id="error-confirm-password" role="alert" aria-live="assertive" style="display: none;"></div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="form-group" id="group-terms" style="margin-bottom: var(--space-md);">
             <label class="checkbox-container">
-              <input type="checkbox" id="remember-me">
+              <input type="checkbox" id="terms" required>
               <span class="checkmark"></span>
-              <span class="checkbox-label">Recuérdame</span>
+              <span class="checkbox-label">Acepto los <a href="#" class="terms-link">Términos de Servicio</a> y la <a href="#" class="terms-link">Política de Privacidad</a></span>
             </label>
-            <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+            <div class="form-error-msg" id="error-terms" role="alert" aria-live="assertive" style="display: none;"></div>
           </div>
 
           <!-- Submit Button -->
-          <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">
-            <span class="btn-text">Iniciar Sesión</span>
+          <button type="submit" class="btn btn-primary btn-submit" id="btn-submit-registro">
+            <span class="btn-text">Crear Cuenta</span>
             <!-- Spinner (hidden by default) -->
             <span class="spinner" id="btn-spinner" style="display: none;"></span>
           </button>
@@ -119,7 +173,7 @@
         <!-- Social login separator -->
         <div class="separator-container">
           <span class="separator-line"></span>
-          <span class="separator-text text-muted">o continúa con</span>
+          <span class="separator-text text-muted">o regístrate con</span>
           <span class="separator-line"></span>
         </div>
 
@@ -143,13 +197,13 @@
         </div>
 
         <div class="form-footer text-center">
-          <p class="text-muted">¿No tienes cuenta? <a href="registro.html" class="register-link">Regístrate gratis</a></p>
+          <p class="text-muted">¿Ya tienes cuenta? <a href="login.html" class="register-link">Inicia sesión</a></p>
         </div>
       </div>
     </section>
 
     <!-- Decorative SVG Mathematical Pattern -->
-    <div class="geometry-pattern" style="width: 100%; max-width: 500px; margin: 0 auto; padding-bottom: 3rem; opacity: 0.6;">
+    <div class="geometry-pattern mobile-only" style="width: 100%; max-width: 500px; margin: 0 auto; padding-bottom: 3rem; opacity: 0.6;">
       <svg aria-hidden="true" viewBox="0 0 400 400" width="100%" height="100%" class="math-geometry-svg">
         <!-- Grid lines -->
         <line x1="50" y1="350" x2="350" y2="350" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5"/>
@@ -183,6 +237,6 @@
   </main>
 
   <!-- Scripts -->
-  <script src="js/login.js"></script>
+  <script src="js/registro.js"></script>
 </body>
 </html>
