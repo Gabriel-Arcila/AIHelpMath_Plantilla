@@ -3,16 +3,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   // --- Navbar Scroll Effect ---
   const navbar = document.getElementById('navbar');
-  const handleScroll = () => {
-    if (window.scrollY > 20) {
-      navbar.classList.add('navbar--scrolled');
-    } else {
-      navbar.classList.remove('navbar--scrolled');
-    }
-  };
+  if (navbar) {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('navbar--scrolled');
+      } else {
+        navbar.classList.remove('navbar--scrolled');
+      }
+    };
 
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Run once initially in case page loads scrolled down
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Run once initially in case page loads scrolled down
+  }
 
   // --- Mobile Hamburger Menu ---
   const hamburgerMenu = document.getElementById('hamburger-menu');

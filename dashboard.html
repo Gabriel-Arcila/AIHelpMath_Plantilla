@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Dashboard — MathIA</title>
+  <meta name="description" content="Panel de control de MathIA donde puedes ver tu progreso, temas pendientes y sugerencias del tutor de IA.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mi Dashboard — MathIA">
+  <meta property="og:description" content="Visualiza tu progreso de aprendizaje matemático e interactúa con el tutor de IA.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0e1a">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <!-- Ambient Glow Backdrops -->
+  <div class="glow-backdrop" style="top: -10%; left: -10%;"></div>
+  <div class="glow-backdrop" style="bottom: -10%; right: -10%; background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(99, 102, 241, 0) 70%); animation-delay: 5s;"></div>
+
+  <!-- Sidebar Overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Navegación principal">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="logo">
+          <svg aria-hidden="true" class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logo-grad-sidebar" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366f1" />
+                <stop offset="100%" stop-color="#8b5cf6" />
+              </linearGradient>
+            </defs>
+            <path d="M5 6H27 M10.5 6V23Q10.5 27 6.5 27 M21.5 6V27" stroke="url(#logo-grad-sidebar)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="logo-text">Math<span class="text-gradient">IA</span></span>
+        </a>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <nav class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="dashboard.html" class="sidebar-link sidebar-link--active" aria-current="page">
+              <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link" title="Próximamente" data-tooltip="Próximamente">
+              <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+                <path d="M6 6h10"/>
+                <path d="M6 10h10"/>
+                <path d="M6 14h10"/>
+              </svg>
+              <span>Mis Módulos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link" title="Próximamente" data-tooltip="Próximamente">
+              <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+              <span>Mi Progreso</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link" title="Próximamente" data-tooltip="Próximamente">
+              <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 8V4H8"/>
+                <rect width="16" height="12" x="4" y="8" rx="2"/>
+                <path d="M9 13h.01"/>
+                <path d="M15 13h.01"/>
+                <path d="M10 17h4"/>
+              </svg>
+              <span>Tutor IA</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link" title="Próximamente" data-tooltip="Próximamente">
+              <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                <path d="M4 22h16"/>
+                <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/>
+                <path d="M12 2a6 6 0 0 1 6 6v5a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Z"/>
+              </svg>
+              <span>Logros</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <hr class="sidebar-divider" aria-hidden="true">
+
+      <!-- Secondary Menu -->
+      <nav class="sidebar-menu sidebar-menu--secondary">
+        <ul>
+          <li>
+            <a href="#" class="sidebar-link" title="Próximamente" data-tooltip="Próximamente">
+              <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+              <span>Configuración</span>
+            </a>
+          </li>
+          <li>
+            <a href="login.html" class="sidebar-link sidebar-link--logout">
+              <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                <polyline points="16 17 21 12 16 7"/>
+                <line x1="21" y1="12" x2="9" y2="12"/>
+              </svg>
+              <span>Cerrar Sesión</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- User Profile section -->
+      <div class="sidebar-profile">
+        <div class="profile-avatar font-mono" aria-hidden="true">GA</div>
+        <div class="profile-info">
+          <p class="profile-name">Gabriel Arcila</p>
+          <p class="profile-email">gabriel@mathia.edu</p>
+        </div>
+      </div>
+
+      <!-- Sidebar Collapse Trigger Button -->
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Colapsar menú lateral">
+        <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+    </aside>
+
+    <!-- Main Workspace Content -->
+    <main class="dashboard-main" id="main-content">
+      
+      <!-- Top Bar Header -->
+      <header class="topbar">
+        <button class="topbar-hamburger" id="topbar-hamburger" aria-label="Abrir menú de navegación">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+
+        <h1 class="topbar-greeting" id="topbar-greeting">Buenos días, Gabriel</h1>
+
+        <!-- Search box -->
+        <div class="search-bar">
+          <span class="search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+          </span>
+          <input type="search" placeholder="Buscar módulos, temas..." aria-label="Buscar en MathIA" id="search-input">
+        </div>
+
+        <!-- Notification Bell & Mobile Profile -->
+        <div class="topbar-actions">
+          <button class="topbar-notifications" aria-label="Ver 3 notificaciones nuevas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+          
+          <div class="topbar-avatar font-mono" id="topbar-avatar" aria-hidden="true">GA</div>
+        </div>
+      </header>
+
+      <!-- Dashboard Scrollable Area -->
+      <div class="dashboard-scrollable">
+        
+        <!-- Stat Cards Row -->
+        <section class="stats-row" aria-label="Estadísticas rápidas">
+          
+          <!-- Stat Item 1: Racha -->
+          <div class="card stat-card">
+            <div class="stat-icon" aria-hidden="true">🔥</div>
+            <div class="stat-value font-mono">12 días</div>
+            <div class="stat-label">Racha Activa</div>
+            <div class="stat-change success" aria-label="Aumento en racha">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+              <span>¡Sigue así!</span>
+            </div>
+          </div>
+
+          <!-- Stat Item 2: Ejercicios -->
+          <div class="card stat-card">
+            <div class="stat-icon" aria-hidden="true">✅</div>
+            <div class="stat-value font-mono">8 / 15</div>
+            <div class="stat-label">Ejercicios Hoy</div>
+            <div class="stat-change success" aria-label="Porcentaje de avance hoy">
+              <span>53% completado</span>
+            </div>
+          </div>
+
+          <!-- Stat Item 3: Precisión -->
+          <div class="card stat-card">
+            <div class="stat-icon" aria-hidden="true">🎯</div>
+            <div class="stat-value font-mono">87%</div>
+            <div class="stat-label">Precisión Global</div>
+            <div class="stat-change success" aria-label="Aumento de precisión respecto a la semana pasada">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+              <span>+3% esta semana</span>
+            </div>
+          </div>
+
+          <!-- Stat Item 4: Tiempo -->
+          <div class="card stat-card">
+            <div class="stat-icon" aria-hidden="true">⏱️</div>
+            <div class="stat-value font-mono">2h 35m</div>
+            <div class="stat-label">Tiempo de Estudio</div>
+            <div class="stat-change neutral" aria-label="Tiempo registrado hoy">
+              <span>Hoy</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main Column Content Grid -->
+        <section class="content-grid">
+          
+          <!-- Left Column (Primary Activities) -->
+          <div class="content-primary">
+            
+            <!-- Card 1: Resume Study -->
+            <div class="card continue-card">
+              <div class="continue-header">
+                <span class="badge">Álgebra Lineal</span>
+                <span class="continue-time text-muted font-mono" aria-label="Última sesión hace 2 horas">Hace 2 horas</span>
+              </div>
+              <h3 class="continue-title">Ecuaciones Cuadráticas</h3>
+              
+              <div class="continue-progress">
+                <div class="progress-bar-container">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-fill" style="width: 65%;"></div>
+                  </div>
+                  <span class="progress-percentage font-mono">65% completado</span>
+                </div>
+              </div>
+              
+              <div class="continue-footer">
+                <p class="continue-desc text-muted">Siguiente: Resolución por factorización e identificaciones de coeficientes.</p>
+                <a href="#" class="btn btn-primary continue-btn">Continuar →</a>
+              </div>
+            </div>
+
+            <!-- Card 2: Recent Activity -->
+            <div class="card activity-card">
+              <h3 class="card-title">Actividad Reciente</h3>
+              <ul class="activity-list">
+                <li class="activity-item">
+                  <div class="activity-status success" aria-label="Completado">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="activity-details">
+                    <span class="activity-text">Evaluación de Funciones Cuadráticas completada</span>
+                    <span class="activity-time text-muted font-mono"><time datetime="2026-06-04T18:00">Hace 2h</time></span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-status pending" aria-label="En progreso">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div class="activity-details">
+                    <span class="activity-text">Práctica de Inecuaciones</span>
+                    <span class="activity-time text-muted font-mono"><time datetime="2026-06-04T15:00">Hace 5h</time></span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-status success" aria-label="Completado">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="activity-details">
+                    <span class="activity-text">Lección "Introducción a Polinomios" vista</span>
+                    <span class="activity-time text-muted font-mono"><time datetime="2026-06-03">Ayer</time></span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-status success" aria-label="Completado">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="activity-details">
+                    <span class="activity-text">Reto Semanal de Álgebra completado</span>
+                    <span class="activity-time text-muted font-mono"><time datetime="2026-06-02">Hace 2 días</time></span>
+                  </div>
+                </li>
+                <li class="activity-item">
+                  <div class="activity-status success" aria-label="Completado">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="activity-details">
+                    <span class="activity-text">Evaluación de Límites básicos completada</span>
+                    <span class="activity-time text-muted font-mono"><time datetime="2026-06-01">Hace 3 días</time></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Column (Secondary / Stats / IA) -->
+          <div class="content-secondary">
+            
+            <!-- Card 3: Progress by Area -->
+            <div class="card progress-areas-card">
+              <h3 class="card-title">Progreso por Área</h3>
+              
+              <div class="progress-rings-grid">
+                <!-- Ring 1: Álgebra -->
+                <div class="progress-ring-item">
+                  <div class="ring-container">
+                    <svg class="progress-ring" width="64" height="64" aria-label="Progreso en Álgebra: 85%">
+                      <circle class="progress-ring__circle-bg" cx="32" cy="32" r="28" fill="transparent" stroke-width="6"/>
+                      <circle class="progress-ring__circle" cx="32" cy="32" r="28" fill="transparent" stroke-width="6" stroke-dasharray="176" stroke-dashoffset="26.4" data-percent="85"/>
+                    </svg>
+                    <span class="progress-percent font-mono">85%</span>
+                  </div>
+                  <span class="progress-label">Álgebra</span>
+                </div>
+
+                <!-- Ring 2: Cálculo -->
+                <div class="progress-ring-item">
+                  <div class="ring-container">
+                    <svg class="progress-ring" width="64" height="64" aria-label="Progreso en Cálculo: 45%">
+                      <circle class="progress-ring__circle-bg" cx="32" cy="32" r="28" fill="transparent" stroke-width="6"/>
+                      <circle class="progress-ring__circle" cx="32" cy="32" r="28" fill="transparent" stroke-width="6" stroke-dasharray="176" stroke-dashoffset="96.8" data-percent="45"/>
+                    </svg>
+                    <span class="progress-percent font-mono">45%</span>
+                  </div>
+                  <span class="progress-label">Cálculo</span>
+                </div>
+
+                <!-- Ring 3: Geometría -->
+                <div class="progress-ring-item">
+                  <div class="ring-container">
+                    <svg class="progress-ring" width="64" height="64" aria-label="Progreso en Geometría: 70%">
+                      <circle class="progress-ring__circle-bg" cx="32" cy="32" r="28" fill="transparent" stroke-width="6"/>
+                      <circle class="progress-ring__circle" cx="32" cy="32" r="28" fill="transparent" stroke-width="6" stroke-dasharray="176" stroke-dashoffset="52.8" data-percent="70"/>
+                    </svg>
+                    <span class="progress-percent font-mono">70%</span>
+                  </div>
+                  <span class="progress-label">Geometría</span>
+                </div>
+
+                <!-- Ring 4: Estadística -->
+                <div class="progress-ring-item">
+                  <div class="ring-container">
+                    <svg class="progress-ring" width="64" height="64" aria-label="Progreso en Probabilidad y Estadística: 30%">
+                      <circle class="progress-ring__circle-bg" cx="32" cy="32" r="28" fill="transparent" stroke-width="6"/>
+                      <circle class="progress-ring__circle" cx="32" cy="32" r="28" fill="transparent" stroke-width="6" stroke-dasharray="176" stroke-dashoffset="123.2" data-percent="30"/>
+                    </svg>
+                    <span class="progress-percent font-mono">30%</span>
+                  </div>
+                  <span class="progress-label">Estadística</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: AI Recommendations -->
+            <div class="card ai-recommendation-card">
+              <div class="ai-recommendation-header">
+                <span class="ai-badge-glow">🤖 MathIA Copilot</span>
+              </div>
+              <h3 class="recommendation-title">Sugerencia Personalizada</h3>
+              <p class="recommendation-text text-muted">
+                Hemos detectado que tienes un excelente desempeño en Álgebra, pero podrías reforzar la sección de Integrales en Cálculo. Te sugerimos realizar la práctica interactiva de <strong style="color: var(--text-primary);">Integración por Partes</strong> para consolidar tu conocimiento.
+              </p>
+              <a href="#" class="btn btn-secondary recommendation-btn">Explorar Práctica →</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Modules Section (Tus Módulos) -->
+        <section class="modules-section" aria-label="Módulos de estudio">
+          <h2 class="modules-section-title">Tus Módulos</h2>
+          
+          <div class="modules-grid">
+            
+            <!-- Module 1: Algebra -->
+            <div class="card module-card" data-module-name="Álgebra Lineal">
+              <div class="module-header">
+                <span class="module-emoji" aria-hidden="true">📚</span>
+                <span class="badge">En progreso</span>
+              </div>
+              <h3 class="module-title">Álgebra Lineal</h3>
+              <p class="module-subtitle text-muted">12 lecciones · 48 ejercicios</p>
+              <div class="module-progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill" style="width: 85%;"></div>
+                </div>
+                <div class="progress-info">
+                  <span class="progress-percent font-mono">85%</span>
+                  <span class="text-muted">Completado</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Module 2: Cálculo -->
+            <div class="card module-card" data-module-name="Cálculo Diferencial">
+              <div class="module-header">
+                <span class="module-emoji" aria-hidden="true">📈</span>
+                <span class="badge badge-warm">Nuevo</span>
+              </div>
+              <h3 class="module-title">Cálculo Diferencial</h3>
+              <p class="module-subtitle text-muted">15 lecciones · 60 ejercicios</p>
+              <div class="module-progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill" style="width: 45%;"></div>
+                </div>
+                <div class="progress-info">
+                  <span class="progress-percent font-mono">45%</span>
+                  <span class="text-muted">Completado</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Module 3: Geometría -->
+            <div class="card module-card" data-module-name="Geometría Analítica">
+              <div class="module-header">
+                <span class="module-emoji" aria-hidden="true">📐</span>
+                <span class="badge">En progreso</span>
+              </div>
+              <h3 class="module-title">Geometría Analítica</h3>
+              <p class="module-subtitle text-muted">10 lecciones · 40 ejercicios</p>
+              <div class="module-progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill" style="width: 70%;"></div>
+                </div>
+                <div class="progress-info">
+                  <span class="progress-percent font-mono">70%</span>
+                  <span class="text-muted">Completado</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Module 4: Estadística -->
+            <div class="card module-card" data-module-name="Probabilidad y Estadística">
+              <div class="module-header">
+                <span class="module-emoji" aria-hidden="true">📊</span>
+                <span class="badge badge-success">Completado</span>
+              </div>
+              <h3 class="module-title">Probabilidad y Estadística</h3>
+              <p class="module-subtitle text-muted">8 lecciones · 32 ejercicios</p>
+              <div class="module-progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill" style="width: 100%; background: var(--success);"></div>
+                </div>
+                <div class="progress-info">
+                  <span class="progress-percent font-mono">100%</span>
+                  <span class="text-muted" style="color: var(--success);">Completado</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

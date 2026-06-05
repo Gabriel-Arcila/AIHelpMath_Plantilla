@@ -403,32 +403,10 @@ document.addEventListener('DOMContentLoaded', () => {
           btnText.style.display = 'inline-block';
           btnText.textContent = '¡Cuenta creada! Redirigiendo...';
           
-          alert('¡Registro simulado correctamente! Redirigiendo a la pantalla de login.');
-          
-          // Reset form and UI states
+          // Redirect to dashboard.html after 1 second
           setTimeout(() => {
-            btnText.textContent = 'Crear Cuenta';
-            registroForm.reset();
-            
-            // Clean up success states
-            clearInputSuccess(nombreInput);
-            clearInputSuccess(emailInput);
-            clearInputSuccess(passwordInput);
-            clearInputSuccess(confirmPasswordInput);
-            
-            // Clean up error states
-            clearInputError(groupNombre, errorNombre);
-            clearInputError(groupEmail, errorEmail);
-            clearInputError(groupPassword, errorPassword);
-            clearInputError(groupConfirmPassword, errorConfirmPassword);
-            clearInputError(groupTerms, errorTerms);
-            
-            // Clean up strength container
-            if (passwordStrengthContainer) passwordStrengthContainer.style.display = 'none';
-            
-            // Redirigir a login
-            window.location.href = 'login.html';
-          }, 1500);
+            window.location.href = 'dashboard.html';
+          }, 1000);
 
         }, 1500);
       } else {

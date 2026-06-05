@@ -231,3 +231,20 @@
   color: var(--accent-warm);
   border: 1px solid rgba(245, 158, 11, 0.2);
 }
+
+/* --- Progress Bars --- */
+.progress-bar {
+  height: 8px;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-smooth);
+}

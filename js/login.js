@@ -171,17 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
           btnText.style.display = 'inline-block';
           btnText.textContent = '¡Éxito! Redirigiendo...';
           
-          alert('¡Inicio de sesión simulado correctamente! Redirigiendo al panel.');
-          
-          // Reset fields and button text
+          // Redirect to dashboard.html after 1 second
           setTimeout(() => {
-            btnText.textContent = 'Iniciar Sesión';
-            loginForm.reset();
-            clearInputSuccess(emailInput);
-            clearInputSuccess(passwordInput);
-            clearInputError(groupEmail, errorEmail);
-            clearInputError(groupPassword, errorPassword);
-          }, 1500);
+            window.location.href = 'dashboard.html';
+          }, 1000);
 
         }, 1500);
       }
