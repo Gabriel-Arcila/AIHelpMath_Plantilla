@@ -1,4 +1,7 @@
-/* js/dashboard.js - Dashboard Specific Logic and Interactions */
+/* js/dashboard.js - Dashboard Specific Logic and Interactions
+   Implicit Dependency: Relies on main.js for scroll-reveal animations (.reveal-element).
+   Features self-healing fallback in case main.js does not execute.
+*/
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
@@ -278,4 +281,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fallback for older browsers
     mdBreakpoint.addListener(handleBreakpointChange);
   }
+
+  // ==========================================
+  // 7. Keyboard Navigation for Custom Elements (Hallazgo #2)
+  // ==========================================
+  // Listen for Enter and Space to click focused module cards
+  moduleCards.forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+
+  // Handle user profile avatar click on keyboard Enter/Space
+  const topbarAvatar = document.getElementById('topbar-avatar');
+  if (topbarAvatar) {
+    topbarAvatar.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        topbarAvatar.click();
+      }
+    });
+    // Stub click event for visualization
+    topbarAvatar.addEventListener('click', () => {
+      console.log('Avatar click triggered.');
+    });
+  }
+
+  // ==========================================
+  // 8. Scroll Reveal Fallback (Hallazgo #10)
+  // ==========================================
+  // If main.js is not present or fails to run, reveal cards after 1 second
+  setTimeout(() => {
+    const hiddenElements = document.querySelectorAll('.reveal-element:not(.is-visible)');
+    if (hiddenElements.length > 0) {
+      console.warn('dashboard.js: Fallback de animación de revelado activado (main.js ausente o no ejecutado).');
+      hiddenElements.forEach(el => {
+        el.classList.add('is-visible');
+      });
+    }
+  }, 1000);
 });

@@ -7,6 +7,7 @@
   
   --accent-primary: #6366f1; /* Indigo */
   --accent-secondary: #8b5cf6; /* Violet */
+  --accent-light: #a5b4fc; /* Lavender/Indigo Light */
   --accent-warm: #f59e0b; /* Amber */
   --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   --accent-glow: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0) 70%);

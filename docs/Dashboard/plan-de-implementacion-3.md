@@ -437,19 +437,19 @@ Cuatro tarjetas compactas en fila horizontal con datos clave:
 
 #### Checklist de Tareas
 
-- [ ] **6.1** Validación de **accesibilidad**:
+- [x] **6.1** Validación de **accesibilidad**:
   - Navegar todo el dashboard usando solo teclado (Tab, Shift+Tab, Enter, Space, Escape)
   - Verificar focus rings (`focus-visible`) en: links del sidebar, botones del topbar, búsqueda, botones CTA de cards, tarjetas de módulos
-  - Verificar que los landmarks ARIA están correctos: `<aside>` (sidebar), `<main>` (contenido), `<header>` (topbar)
+  - Verificar que los landmarks ARIA están correctos: `<nav>` (sidebar), `<main>` (contenido), `<header>` (topbar)
   - Comprobar contraste de colores con herramienta (ratio ≥ 4.5:1 texto normal, ≥ 3:1 texto grande/iconos)
   - Verificar atributos `aria-label` en botones de solo-icono (hamburger, notificaciones, toggle sidebar)
-- [ ] **6.2** Pruebas de **responsive**:
+- [x] **6.2** Pruebas de **responsive**:
   - Viewport **320px** (iPhone SE): Sidebar overlay, stats 2x2, contenido stacked, no overflow-x
   - Viewport **375px** (iPhone estándar): Similiar a 320px, espaciado correcto
   - Viewport **768px** (iPad portrait): Sidebar colapsada (iconos), contenido a ancho completo
   - Viewport **1024px** (iPad landscape): Sidebar expandida, grid de 2 columnas en contenido
   - Viewport **1440px** (Desktop): Layout completo, ancho máximo respetado
-- [ ] **6.3** Pruebas de **interacciones**:
+- [x] **6.3** Pruebas de **interacciones**:
   - Toggle sidebar mobile: Abre/cierra con animación fluida
   - Toggle sidebar desktop: Colapsa/expande con persistencia en localStorage
   - Cerrar sidebar con Escape y click en overlay
@@ -457,23 +457,23 @@ Cuatro tarjetas compactas en fila horizontal con datos clave:
   - Hover effects en todas las cards y links del sidebar
   - Anillos de progreso se animan al scroll
   - Click en links placeholder muestra tooltip o estado visual de "Próximamente"
-- [ ] **6.4** Revisión **visual** final:
+- [x] **6.4** Revisión **visual** final:
   - Coherencia con identidad visual de MathIA (login, registro, landing)
   - Glows ambientales correctos y no intrusivos
   - Glassmorphism consistente en sidebar y cards
   - Tipografía correcta: `Outfit` para UI, `JetBrains Mono` para datos numéricos
   - Gradientes indigo-violeta en los acentos y el botón primario
   - Sin overflow horizontal en ningún breakpoint
-- [ ] **6.5** Validación **HTML**:
+- [x] **6.5** Validación **HTML**:
   - Pasar por validador W3C
   - Corregir warnings y errores
   - Verificar que hay un solo `<h1>` por página
-- [ ] **6.6** Revisión de **rendimiento**:
+- [x] **6.6** Revisión de **rendimiento**:
   - Verificar que las animaciones corren a 60fps (no animan `width`, `margin`, `padding`)
   - Verificar que `backdrop-filter: blur()` no causa drops de rendimiento en mobile
   - Verificar que no se cargan recursos innecesarios
   - Verificar que los SVGs inline están optimizados (sin metadatos de editor)
-- [ ] **6.7** Prueba de **flujo completo** end-to-end:
+- [x] **6.7** Prueba de **flujo completo** end-to-end:
   - Landing → Login → Dashboard ✅
   - Landing → Registro → Dashboard ✅
   - Dashboard → Cerrar Sesión → Login ✅
