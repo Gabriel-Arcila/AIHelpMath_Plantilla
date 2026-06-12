@@ -851,3 +851,13 @@
     margin: 0;
   }
 }
+
+/* Fix flex-grow issue for large card to eliminate whitespace */
+.card-large .bento-desc {
+  flex-grow: 0;
+}
+
+.card-large .bento-visual-custom {
+  flex-grow: 1;
+  justify-content: flex-end;
+}
